@@ -24,9 +24,9 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 SECRET_KEY = 'b)ca7o0fkl!+22w%h5f==3e)0ps*f&(kf@0ox0inbb@er#_#jp'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['evening-depths-45721.herokuapp.com']
 
 
 # Application definition
