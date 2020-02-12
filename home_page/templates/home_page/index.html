@@ -1,0 +1,36 @@
+{% extends "layout/basic.html" %}
+
+{% block content %}
+<header>
+    <h1>Последние опубликованые</h1>
+</header>
+{% for bb in bbs %}
+    <div class="b">
+    
+    <figure>
+    <h2>{{ bb.title }}</h2>
+    <p>{{ bb.content }}</p>
+    <a class="sidebar_a" href="{% url 'detail' pk=bb.pk %}">Читать полностью→</a>
+    <p id="container">{{ bb.published|date:"d.m.Y H:i" }}
+        <a href="{% url 'by_rubric' bb.rubric.pk %}">
+            {{ bb.rubric.name }}</a>
+        {% if user.is_authenticated %}
+        <a href="{% url 'delete' bb.pk %}">Удалить статью</a>
+        <a href="{% url 'edit' bb.pk %}">Исправить текст</a>
+        {% endif %}
+    </p>
+    </figure>
+    </div>
+{% endfor %}
+<div id="paginator">
+    {% if page.has_previous %}
+    <a href="?page={{ page.previous_page_number }}">&lt;</a>
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+    {% endif %}
+    Часть №{{ page.number }} из {{ page.paginator.num_pages }}
+    {% if page.has_next %}
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+    <a href="?page={{ page.next_page_number }}">&gt;</a>
+    {% endif %}
+</div>
+{% endblock %}

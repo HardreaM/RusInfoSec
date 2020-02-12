@@ -1,0 +1,16 @@
+{% extends "layout/basic.html" %}
+
+{% block title %}Удаление cтатьи{% endblock %}
+
+{% block content %}
+<div id="main">
+<h2>Удаление статьи</h2>
+<p>Рубрика: {{  article.rubric.name }}</p>
+<p>Заголовок: {{ article.title }}</p>
+<p>{{ article.content }}</p>
+<form method="POST">
+    {% csrf_token %}
+    <input type="submit" value="Удалить">
+</form>
+</div>
+{% endblock %}

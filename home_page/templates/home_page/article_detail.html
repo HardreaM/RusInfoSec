@@ -1,0 +1,9 @@
+{% extends "layout/basic.html" %}
+
+{% block title %}{{ bb.title }}{% endblock %}
+
+{% block content %}
+<p>Рубрика: {{ article.rubric.name }}</p>
+<h2>{{ article.title }}</h2>
+<p>{{ article.content }}</p>
+{% endblock %}

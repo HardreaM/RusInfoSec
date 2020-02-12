@@ -1,0 +1,13 @@
+{% extends 'layout/basic.html' %}
+
+{% block title %}Сброс пароля{% endblock %}
+
+{% block content %}
+{% if user.email == email %}
+<p>Письмо успешно отправлено</p>
+{% endif %}
+{% if user.email != email %}
+<p>Пользователя с такой почтой не существует</p>
+<a href="{% url 'password_reset' %}">Повторить ввод</a>
+{% endif %}
+{% endblock %}

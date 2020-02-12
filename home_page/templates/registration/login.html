@@ -1,0 +1,19 @@
+{% extends "layout/basic.html" %}
+
+{% block title %}Вход{% endblock %}
+
+{% block content %}
+<h2>Вход</h2>
+{% if user.is_authenticated %}
+<p>Вы уже выполнили вход.</p>
+{% else %}
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="hidden" name="next" value="{{ next }}">
+    <input type="submit" value="Войти">
+    <a href="{% url 'social:begin' 'vk-oauth2' %}">Войти с помощью ВКонтакте</a>
+    <a href="{% url 'password_reset' %}">Забыли пароль?</a>
+</form>
+{% endif %}
+{% endblock %}
