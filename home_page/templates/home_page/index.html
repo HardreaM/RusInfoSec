@@ -9,11 +9,12 @@
     
     <figure>
     <h2>{{ bb.title }}</h2>
-    <p>{{ bb.content }}</p>
-    <a class="sidebar_a" href="{% url 'detail' pk=bb.pk %}">Читать полностью→</a>
-    <p id="container">{{ bb.published|date:"d.m.Y H:i" }}
+    <p>{{ bb.content|linebreaks }}</p>
+    <!--<a class="sidebar_a" href="{% url 'detail' pk=bb.pk %}">Читать полностью→</a>-->
+    <p id="container">
         <a href="{% url 'by_rubric' bb.rubric.pk %}">
             {{ bb.rubric.name }}</a>
+        <!--{{ bb.published|date:"d.m.Y H:i" }}-->
         {% if user.is_authenticated %}
         <a href="{% url 'delete' bb.pk %}">Удалить статью</a>
         <a href="{% url 'edit' bb.pk %}">Исправить текст</a>

@@ -7,8 +7,7 @@
         content="text/html; charset=utf-8">
         <link rel="stylesheet" type="text/css"
         href="{% static 'home_page/style.css' %}">
-        <title id="title">{% block title %}Главная{% endblock %} - 
-        BlockChain</title>
+        <title id="title">RuInfoSec - {% block title %}Главная{% endblock %}</title>
     </head>
     <body id="wrapper">
         <div id="main">
@@ -17,7 +16,7 @@
         {% endblock %}
         </div>
         <nav id="sidebar">
-            <img src="/static/home_page/bg.jpg/" alt="Digital currency" class="flexible-image">
+            <img src="/static/home_page/bg.jpg" alt="Digital currency" class="flexible-image">
             <a href="{% url 'index' %}">Главная</a>
             {% for rubric in rubrics %}
             <a href="{% url 'by_rubric' rubric.pk %}">{{ rubric.name }}</a>

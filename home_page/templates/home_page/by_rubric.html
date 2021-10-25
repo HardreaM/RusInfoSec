@@ -11,7 +11,7 @@
 <p>{{ bb.content }}</p>
 {% if user.is_authenticated %}
 <p id="container">
-    {{ bb.published|date:"d.m.Y H:i" }}
+    <!--{{ bb.published|date:"d.m.Y H:i" }}-->
     <a href="{% url 'delete' bb.pk %}">Удалить статью</a>
     <a href="{% url 'edit' bb.pk %}">Исправить текст</a>
 </p>
