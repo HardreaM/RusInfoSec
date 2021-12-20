@@ -19,7 +19,6 @@ oauthlib==3.1.0
 Pillow==7.0.0
 psycopg2==2.8.4
 PyJWT==1.7.1
-pyowm==2.10.0
 pyTelegramBotAPI==3.6.6
 python-box==4.0.1
 python3-openid==3.1.0
@@ -31,10 +30,8 @@ six==1.13.0
 social-auth-app-django==3.1.0
 social-auth-core==3.2.0
 sqlparse==0.3.0
-telebot==0.0.3
 toml==0.10.0
 urllib3==1.24.3
 voluptuous==0.11.7
 whitenoise==4.1.4
-yandex-weather-api==0.2.4
 yarl==1.4.2
