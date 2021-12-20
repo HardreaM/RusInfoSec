@@ -8,7 +8,7 @@
 {% for bb in bbs %}
 <figure>
 <h2>{{ bb.title }}</h2>
-<p>{{ bb.content }}</p>
+<p>{{ bb.content|linebreaks }}</p>
 {% if user.is_authenticated %}
 <p id="container">
     <!--{{ bb.published|date:"d.m.Y H:i" }}-->
